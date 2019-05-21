@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    body {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      background-color: #ccc;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+    canvas {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="320" height="200"></canvas>
+  <script>
+    fetch('ray.wasm')
+      .then(response => response.arrayBuffer())
+      .then(bytes => WebAssembly.instantiate(bytes, {Math}))
+      .then(source => {
+        let instance = source.instance;
+        let canvasData = new Uint8Array(instance.exports.mem.buffer, 1024, 256000);
+        let canvas = document.querySelector('canvas');
+        let context = canvas.getContext('2d');
+        let imageData = context.createImageData(320, 200);
+        (function update(time) {
+          requestAnimationFrame(update);
+          instance.exports.run(time);
+          imageData.data.set(canvasData);
+          context.putImageData(imageData, 0, 0);
+        })();
+      });
+  </script>
+</body>
+
