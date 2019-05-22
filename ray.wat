@@ -7,98 +7,82 @@
   "\00\00\c8\42" ;; ground.y
   "\00\00\00\00" ;; ground.z
   "\00\00\c2\42" ;; ground.r
-  "\0a\d7\23\3e" ;; ground.R
-  "\0a\d7\a3\3e" ;; ground.G
-  "\ec\51\38\3f" ;; ground.B
+  "\3b\df\6f\3f" ;; ground.R
+  "\04\56\8e\3e" ;; ground.G
+  "\91\ed\bc\3e" ;; ground.B
 )
-
-;; old stuff
-(;
-"\00\00\c0\40\9a\99\99\3e\00\00\00\00\00\00\00\00" ;; s1.x
-"\33\33\13\c0\00\00\00\3f\00\00\00\00\00\00\20\c0" ;; s1.y
-"\00\00\e0\40\cd\cc\8c\3f\c3\f5\c8\3f\00\00\20\c1" ;; s1.z
-"\00\00\00\00\00\00\00\00\00\00\00\00\9a\99\d9\3f" ;; s1.r
-"\00\00\00\00\00\00\00\00\00\00\00\00\c3\f5\a8\3e" ;; s1.R
-"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s1.G
-"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s1.B
-"\00\00\60\40\00\00\00\bf\14\ae\47\3f\00\00\00\00" ;; s2.x
-"\66\66\96\40\66\66\a6\3f\00\00\00\00\00\00\00\bf" ;; s2.y
-"\00\00\60\40\66\66\06\c0\52\b8\96\40\00\00\50\c1" ;; s2.z
-"\00\00\00\00\00\00\00\00\00\00\00\00\cd\cc\cc\3e" ;; s2.r
-"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s2.R
-"\00\00\00\00\00\00\00\00\00\00\00\00\0a\d7\ae\3e" ;; s2.G
-"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s2.B
-"\00\00\60\40\cd\cc\8c\3f\c3\f5\c8\3f\00\00\00\00" ;; s3.x
-"\9a\99\99\bf\00\00\80\40\00\00\00\00\00\00\c0\3f" ;; s3.y
-"\00\00\c0\3f\9a\99\99\bf\00\00\00\00\00\00\70\c1" ;; s3.z
-"\00\00\00\00\00\00\00\00\00\00\00\00\66\66\a6\3f" ;; s3.r
-"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s3.R
-"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s3.G
-"\00\00\00\00\00\00\00\00\00\00\00\00\c3\f5\a8\3e" ;; s3.B
-;)
 
 (data (i32.const 112)
-  "\00\00\00\00\00\00\00\00\00\00\00\00\66\66\26\40" ;; s1.x
-  "\00\00\00\00\00\00\00\00\00\00\00\00\cd\cc\cc\3d" ;; s1.y
+  "\04\56\8e\3e" ;; bg.R
+  "\3b\df\6f\3f" ;; bg.G
+  "\f2\d2\4d\3f" ;; bg.B
+
+  "\00\00\00\40\8f\c2\75\3e\00\00\80\3f\00\00\00\00" ;; s1.x
+  "\00\00\00\40\3d\0a\57\3f\00\00\c0\3f\cd\cc\cc\3d" ;; s1.y
   "\00\00\00\00\00\00\00\00\00\00\00\00\66\66\e6\c0" ;; s1.z
-  "\9a\99\99\3e\8f\c2\75\3f\00\00\00\00\9a\99\d9\3f" ;; s1.r
-  "\00\00\00\00\00\00\00\00\00\00\00\00\c3\f5\28\3f" ;; s1.R
-  "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s1.G
-  "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s1.B
-  "\00\00\00\00\00\00\00\00\00\00\00\00\9a\99\99\be" ;; s2.x
+  "\00\00\00\00\00\00\00\00\00\00\00\00\cd\cc\4c\3f" ;; s1.r
+  "\0a\d7\a3\3e\71\3d\8a\3e\00\00\00\00\c3\f5\28\3f" ;; s1.R
+  "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\80\3f" ;; s1.G
+  "\52\b8\9e\3e\14\ae\c7\3e\00\00\00\00\00\00\80\3f" ;; s1.B
+  "\00\00\40\40\a4\70\7d\3f\00\00\00\00\00\00\00\00" ;; s2.x
   "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\c0" ;; s2.y
-  "\00\00\00\00\00\00\00\00\00\00\00\00\33\33\e3\c0" ;; s2.z
-  "\9a\99\19\3f\9a\99\99\3e\00\00\00\00\33\33\b3\3f" ;; s2.r
+  "\00\00\40\40\a4\70\7d\3f\00\00\c0\3f\00\00\c0\c0" ;; s2.z
+  "\00\00\00\00\00\00\00\00\00\00\00\00\66\66\a6\3f" ;; s2.r
   "\5c\8f\02\3f\c3\f5\a8\3e\00\00\00\00\29\5c\0f\3e" ;; s2.R
-  "\5c\8f\02\3f\14\ae\c7\3e\00\00\00\00\e1\7a\14\3f" ;; s2.G
-  "\5c\8f\02\3f\ec\51\b8\3e\00\00\00\00\8f\c2\f5\3d" ;; s2.B
-  "\00\00\00\00\00\00\00\00\00\00\00\00\9a\99\19\c0" ;; s3.x
-  "\00\00\00\00\00\00\00\00\00\00\00\00\66\66\66\3f" ;; s3.y
-  "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\a0\c0" ;; s3.z
-  "\00\00\00\3f\ec\51\38\3e\00\00\00\00\cd\cc\cc\3f" ;; s3.r
-  "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s3.R
-  "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s3.G
-  "\00\00\00\00\00\00\00\00\00\00\00\00\33\33\33\3f" ;; s3.B
+  "\5c\8f\02\3f\14\ae\c7\3e\00\00\00\00\00\00\80\3f" ;; s2.G
+  "\5c\8f\02\3f\ec\51\b8\3e\00\00\00\00\00\00\80\3f" ;; s2.B
+  "\00\00\40\40\5c\8f\82\3f\00\00\00\00\00\00\00\3f" ;; s3.x
+  "\00\00\00\00\00\00\00\00\00\00\00\00\33\33\13\40" ;; s3.y
+  "\00\00\40\c0\5c\8f\82\3f\00\00\c0\3f\66\66\06\c1" ;; s3.z
+  "\00\00\00\00\ec\51\38\3e\00\00\00\00\33\33\33\3f" ;; s3.r
+  "\5c\8f\02\3f\85\eb\11\3f\00\00\00\00\00\00\80\3f" ;; s3.R
+  "\00\00\00\00\00\00\00\00\00\00\00\00\52\b8\5e\3f" ;; s3.G
+  "\00\00\00\00\00\00\00\00\00\00\00\00\f6\28\5c\3f" ;; s3.B
 )
 
-(global $time (mut f32) (f32.const 0))
-(global $t0 (mut f32) (f32.const 0))
-(global $rsx (mut f32) (f32.const 0))
-(global $rsy (mut f32) (f32.const 0))
-(global $rsz (mut f32) (f32.const 0))
-(global $rdx (mut f32) (f32.const 0))
-(global $rdy (mut f32) (f32.const 0))
-(global $rdz (mut f32) (f32.const 0))
-(global $r (mut f32) (f32.const 0))
-(global $g (mut f32) (f32.const 0))
-(global $b (mut f32) (f32.const 0))
+(global $time (mut f32) (f32.const 0)) ;; simulation time, in random units
+(global $t0 (mut f32) (f32.const 0))   ;; "time" of ray intersection
+(global $rsx (mut f32) (f32.const 0))  ;; ray start x
+(global $rsy (mut f32) (f32.const 0))  ;; ray start y
+(global $rsz (mut f32) (f32.const 0))  ;; ray start z
+(global $rdx (mut f32) (f32.const 0))  ;; ray dir x
+(global $rdy (mut f32) (f32.const 0))  ;; ray dir y
+(global $rdz (mut f32) (f32.const 0))  ;; ray dir z
+(global $r (mut f32) (f32.const 0))    ;; current pixel R
+(global $g (mut f32) (f32.const 0))    ;; current pixel G
+(global $b (mut f32) (f32.const 0))    ;; current pixel B
 
-(func $value (param i32 i32)
-  (f32.store (local.get 0)
-    (f32.add
-      (f32.mul
-        (f32.load offset=0 (local.get 1))
-        (call $sin
-          (f32.add
-            (f32.mul (global.get $time) (f32.load offset=4 (local.get 1)))
-            (f32.load offset=8 (local.get 1)))))
-      (f32.load offset=12 (local.get 1)))))
-
+;; Update all sphere values: x, y, z, r, R, G, B
 (func $update
   (local $dst i32)
   (local $src i32)
 
   (local.set $dst (i32.const 28))
-  (local.set $src (i32.const 112))
+  (local.set $src (i32.const 124))
 
   (loop
-    (call $value (local.get $dst) (local.get $src))
+    ;; set value to A*sin(B*t+C)+D
+    (f32.store (local.get $dst)
+      (f32.add
+        (f32.mul
+          (f32.load offset=0 (local.get $src))
+          (call $sin
+            (f32.add
+              (f32.mul (global.get $time) (f32.load offset=4 (local.get $src)))
+              (f32.load offset=8 (local.get $src)))))
+        (f32.load offset=12 (local.get $src))))
+
     (local.set $src (i32.add (local.get $src) (i32.const 16)))
     (br_if 0
       (i32.ne
         (local.tee $dst (i32.add (local.get $dst) (i32.const 4)))
         (i32.const 112)))))
 
+;; Ray/sphere intersection.
+;;   $s is sphere address
+;;   ray pos/dir via globals rs{x,y,z}, rd{x,y,z}
+
+;; Returns distance to hit along ray, or inf (no hit).
 (func $ray_sphere (param $s i32) (result f32)
   (local $Lx f32)
   (local $Ly f32)
@@ -158,6 +142,7 @@
         (f32.const inf)))
     (f32.const inf)))
 
+;; Intersect ray w/ all spheres, return address of closest hit (or -1 if none).
 (func $scene (result i32)
   (local $s i32)
   (local $smin i32)
@@ -180,6 +165,7 @@
         (i32.const 112))))
   (local.get $smin))
 
+;; Accumulate given color into current pixel's color, scaled by $scale.
 (func $accum (param $r f32) (param $g f32) (param $b f32) (param $scale f32)
   (global.set $r
     (f32.add (global.get $r) (f32.mul (local.get $r) (local.get $scale))))
@@ -188,6 +174,7 @@
   (global.set $b
     (f32.add (global.get $b) (f32.mul (local.get $b) (local.get $scale)))))
 
+;; Calculate pixel color.
 (func $scene_col
   (local $bounce i32)
   (local $scale f32)
@@ -203,6 +190,7 @@
   (local.set $bounce (i32.const 3))
   (local.set $scale (f32.const 1))
 
+  ;; Loop for bounced rays.
   (loop $loop
     (if
       (i32.ge_s
@@ -291,7 +279,10 @@
             (br $loop))) )
       (else
         (call $accum
-          (f32.const 0.7) (f32.const 0.4) (f32.const 0.3) (local.get $scale))
+          (f32.load (i32.const 112))
+          (f32.load (i32.const 116))
+          (f32.load (i32.const 120))
+          (local.get $scale))
       )
     )
   )
@@ -313,6 +304,7 @@
   (global.set $rdy (f32.div (local.get $y) (local.get $temp)))
   (global.set $rdz (f32.div (local.get $z) (local.get $temp))))
 
+;; Clamp f32 color, and convert to [0, 255] range.
 (func $col (param f32) (result i32)
   (i32.trunc_f32_s
     (f32.mul
