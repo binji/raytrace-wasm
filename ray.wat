@@ -28,32 +28,41 @@
 ;; 0: spheres: x, y, z, r
 (func $update
   ;; ground
-  (f32.store (i32.const 0)  (f32.const    0))
-  (f32.store (i32.const 4)  (f32.const  100))
-  (f32.store (i32.const 8)  (f32.const    0))
-  (f32.store (i32.const 12) (f32.const   97))
+  (f32.store (i32.const 0)  (f32.const    0))   ;; x
+  (f32.store (i32.const 4)  (f32.const  100))   ;; y
+  (f32.store (i32.const 8)  (f32.const    0))   ;; z
+  (f32.store (i32.const 12) (f32.const   97))   ;; r
+  (f32.store (i32.const 16) (f32.const   0.16)) ;; R
+  (f32.store (i32.const 20) (f32.const   0.32)) ;; G
+  (f32.store (i32.const 24) (f32.const   0.72)) ;; B
 
   ;; sphere 1
-  (call $pos (i32.const 16) (f32.const 10) (f32.const 0.3) (f32.const 0) (f32.const 0))
-  (call $pos (i32.const 20) (f32.const -2.3) (f32.const 0.5) (f32.const 0) (f32.const -2.5))
-  (call $pos (i32.const 24) (f32.const  7) (f32.const 1.1) (f32.const 1.57) (f32.const -10))
-  (f32.store (i32.const 28) (f32.const  1.7))
+  (call $pos (i32.const 28) (f32.const 6) (f32.const 0.3) (f32.const 0) (f32.const 0))
+  (call $pos (i32.const 32) (f32.const -2.3) (f32.const 0.5) (f32.const 0) (f32.const -2.5))
+  (call $pos (i32.const 36) (f32.const  7) (f32.const 1.1) (f32.const 1.57) (f32.const -10))
+  (f32.store (i32.const 40) (f32.const  1.7))
+  (f32.store (i32.const 44) (f32.const   0.33)) ;; R
+  (f32.store (i32.const 48) (f32.const   0.0)) ;; G
+  (f32.store (i32.const 52) (f32.const   0.0)) ;; B
 
   ;; sphere 2
-  (call $pos (i32.const 32) (f32.const 3.5) (f32.const -0.5) (f32.const 0.78) (f32.const 0))
-  (call $pos (i32.const 36) (f32.const 4.7) (f32.const 1.3) (f32.const 0) (f32.const -0.5))
-  (call $pos (i32.const 40) (f32.const 3.5) (f32.const -2.1) (f32.const 4.71) (f32.const -13))
-  (f32.store (i32.const 44) (f32.const   0.4))
+  (call $pos (i32.const 56) (f32.const 3.5) (f32.const -0.5) (f32.const 0.78) (f32.const 0))
+  (call $pos (i32.const 60) (f32.const 4.7) (f32.const 1.3) (f32.const 0) (f32.const -0.5))
+  (call $pos (i32.const 64) (f32.const 3.5) (f32.const -2.1) (f32.const 4.71) (f32.const -13))
+  (f32.store (i32.const 68) (f32.const   0.4))
+  (f32.store (i32.const 72) (f32.const   0.0)) ;; R
+  (f32.store (i32.const 76) (f32.const   0.32)) ;; G
+  (f32.store (i32.const 80) (f32.const   0.0)) ;; B
 
   ;; sphere 3
-  (call $pos (i32.const 48) (f32.const 3.5) (f32.const 1.1) (f32.const 1.57) (f32.const 0))
-  (call $pos (i32.const 52) (f32.const -1.2) (f32.const 4.0) (f32.const 0) (f32.const 1.5))
-  (call $pos (i32.const 56) (f32.const 1.5) (f32.const -1.2) (f32.const 0) (f32.const -15))
-  (f32.store (i32.const 60) (f32.const   1.3))
+  (call $pos (i32.const 84) (f32.const 3.5) (f32.const 1.1) (f32.const 1.57) (f32.const 0))
+  (call $pos (i32.const 88) (f32.const -1.2) (f32.const 4.0) (f32.const 0) (f32.const 1.5))
+  (call $pos (i32.const 92) (f32.const 1.5) (f32.const -1.2) (f32.const 0) (f32.const -15))
+  (f32.store (i32.const 96) (f32.const   1.3))
+  (f32.store (i32.const 100) (f32.const   0.0)) ;; R
+  (f32.store (i32.const 104) (f32.const   0.0)) ;; G
+  (f32.store (i32.const 108) (f32.const   0.33)) ;; B
 )
-
-(func $start (call $update))
-(start $start)
 
 (func $ray_sphere (param $s i32) (result f32)
   (local $Lx f32)
@@ -132,8 +141,8 @@
         (local.set $smin (local.get $s))))
     (br_if 0
       (i32.ne
-        (local.tee $s (i32.add (local.get $s) (i32.const 16)))
-        (i32.const 64))))
+        (local.tee $s (i32.add (local.get $s) (i32.const 28)))
+        (i32.const 112))))
   (local.get $smin))
 
 (func $accum (param $r f32) (param $g f32) (param $b f32) (param $scale f32)
@@ -217,9 +226,9 @@
                 (f32.const 0)))
 
             (call $accum
-              (f32.mul (f32.const 0.16) (local.get $dot))
-              (f32.mul (f32.const 0.32) (local.get $dot))
-              (f32.mul (f32.const 0.72) (local.get $dot))
+              (f32.mul (f32.load offset=16 (local.get $smin)) (local.get $dot))
+              (f32.mul (f32.load offset=20 (local.get $smin)) (local.get $dot))
+              (f32.mul (f32.load offset=24 (local.get $smin)) (local.get $dot))
               (local.get $scale))))
 
         ;; do reflect
