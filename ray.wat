@@ -2,6 +2,65 @@
 
 (memory (export "mem") 4)
 
+(data (i32.const 0)
+  "\00\00\00\00" ;; ground.x
+  "\00\00\c8\42" ;; ground.y
+  "\00\00\00\00" ;; ground.z
+  "\00\00\c2\42" ;; ground.r
+  "\0a\d7\23\3e" ;; ground.R
+  "\0a\d7\a3\3e" ;; ground.G
+  "\ec\51\38\3f" ;; ground.B
+)
+
+;; old stuff
+(;
+"\00\00\c0\40\9a\99\99\3e\00\00\00\00\00\00\00\00" ;; s1.x
+"\33\33\13\c0\00\00\00\3f\00\00\00\00\00\00\20\c0" ;; s1.y
+"\00\00\e0\40\cd\cc\8c\3f\c3\f5\c8\3f\00\00\20\c1" ;; s1.z
+"\00\00\00\00\00\00\00\00\00\00\00\00\9a\99\d9\3f" ;; s1.r
+"\00\00\00\00\00\00\00\00\00\00\00\00\c3\f5\a8\3e" ;; s1.R
+"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s1.G
+"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s1.B
+"\00\00\60\40\00\00\00\bf\14\ae\47\3f\00\00\00\00" ;; s2.x
+"\66\66\96\40\66\66\a6\3f\00\00\00\00\00\00\00\bf" ;; s2.y
+"\00\00\60\40\66\66\06\c0\52\b8\96\40\00\00\50\c1" ;; s2.z
+"\00\00\00\00\00\00\00\00\00\00\00\00\cd\cc\cc\3e" ;; s2.r
+"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s2.R
+"\00\00\00\00\00\00\00\00\00\00\00\00\0a\d7\ae\3e" ;; s2.G
+"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s2.B
+"\00\00\60\40\cd\cc\8c\3f\c3\f5\c8\3f\00\00\00\00" ;; s3.x
+"\9a\99\99\bf\00\00\80\40\00\00\00\00\00\00\c0\3f" ;; s3.y
+"\00\00\c0\3f\9a\99\99\bf\00\00\00\00\00\00\70\c1" ;; s3.z
+"\00\00\00\00\00\00\00\00\00\00\00\00\66\66\a6\3f" ;; s3.r
+"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s3.R
+"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s3.G
+"\00\00\00\00\00\00\00\00\00\00\00\00\c3\f5\a8\3e" ;; s3.B
+;)
+
+(data (i32.const 112)
+  "\00\00\00\00\00\00\00\00\00\00\00\00\66\66\26\40" ;; s1.x
+  "\00\00\00\00\00\00\00\00\00\00\00\00\cd\cc\cc\3d" ;; s1.y
+  "\00\00\00\00\00\00\00\00\00\00\00\00\66\66\e6\c0" ;; s1.z
+  "\9a\99\99\3e\8f\c2\75\3f\00\00\00\00\9a\99\d9\3f" ;; s1.r
+  "\00\00\00\00\00\00\00\00\00\00\00\00\c3\f5\28\3f" ;; s1.R
+  "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s1.G
+  "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s1.B
+  "\00\00\00\00\00\00\00\00\00\00\00\00\9a\99\99\be" ;; s2.x
+  "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\c0" ;; s2.y
+  "\00\00\00\00\00\00\00\00\00\00\00\00\33\33\e3\c0" ;; s2.z
+  "\9a\99\19\3f\9a\99\99\3e\00\00\00\00\33\33\b3\3f" ;; s2.r
+  "\5c\8f\02\3f\c3\f5\a8\3e\00\00\00\00\29\5c\0f\3e" ;; s2.R
+  "\5c\8f\02\3f\14\ae\c7\3e\00\00\00\00\e1\7a\14\3f" ;; s2.G
+  "\5c\8f\02\3f\ec\51\b8\3e\00\00\00\00\8f\c2\f5\3d" ;; s2.B
+  "\00\00\00\00\00\00\00\00\00\00\00\00\9a\99\19\c0" ;; s3.x
+  "\00\00\00\00\00\00\00\00\00\00\00\00\66\66\66\3f" ;; s3.y
+  "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\a0\c0" ;; s3.z
+  "\00\00\00\3f\ec\51\38\3e\00\00\00\00\cd\cc\cc\3f" ;; s3.r
+  "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s3.R
+  "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" ;; s3.G
+  "\00\00\00\00\00\00\00\00\00\00\00\00\33\33\33\3f" ;; s3.B
+)
+
 (global $time (mut f32) (f32.const 0))
 (global $t0 (mut f32) (f32.const 0))
 (global $rsx (mut f32) (f32.const 0))
@@ -14,55 +73,31 @@
 (global $g (mut f32) (f32.const 0))
 (global $b (mut f32) (f32.const 0))
 
-(func $pos (param i32 f32 f32 f32 f32)
+(func $value (param i32 i32)
   (f32.store (local.get 0)
     (f32.add
       (f32.mul
-        (local.get 1)
+        (f32.load offset=0 (local.get 1))
         (call $sin
           (f32.add
-            (f32.mul (global.get $time) (local.get 2))
-            (local.get 3))))
-      (local.get 4))))
+            (f32.mul (global.get $time) (f32.load offset=4 (local.get 1)))
+            (f32.load offset=8 (local.get 1)))))
+      (f32.load offset=12 (local.get 1)))))
 
-;; 0: spheres: x, y, z, r
 (func $update
-  ;; ground
-  (f32.store (i32.const 0)  (f32.const    0))   ;; x
-  (f32.store (i32.const 4)  (f32.const  100))   ;; y
-  (f32.store (i32.const 8)  (f32.const    0))   ;; z
-  (f32.store (i32.const 12) (f32.const   97))   ;; r
-  (f32.store (i32.const 16) (f32.const   0.16)) ;; R
-  (f32.store (i32.const 20) (f32.const   0.32)) ;; G
-  (f32.store (i32.const 24) (f32.const   0.72)) ;; B
+  (local $dst i32)
+  (local $src i32)
 
-  ;; sphere 1
-  (call $pos (i32.const 28) (f32.const 6) (f32.const 0.3) (f32.const 0) (f32.const 0))
-  (call $pos (i32.const 32) (f32.const -2.3) (f32.const 0.5) (f32.const 0) (f32.const -2.5))
-  (call $pos (i32.const 36) (f32.const  7) (f32.const 1.1) (f32.const 1.57) (f32.const -10))
-  (f32.store (i32.const 40) (f32.const  1.7))
-  (f32.store (i32.const 44) (f32.const   0.33)) ;; R
-  (f32.store (i32.const 48) (f32.const   0.0)) ;; G
-  (f32.store (i32.const 52) (f32.const   0.0)) ;; B
+  (local.set $dst (i32.const 28))
+  (local.set $src (i32.const 112))
 
-  ;; sphere 2
-  (call $pos (i32.const 56) (f32.const 3.5) (f32.const -0.5) (f32.const 0.78) (f32.const 0))
-  (call $pos (i32.const 60) (f32.const 4.7) (f32.const 1.3) (f32.const 0) (f32.const -0.5))
-  (call $pos (i32.const 64) (f32.const 3.5) (f32.const -2.1) (f32.const 4.71) (f32.const -13))
-  (f32.store (i32.const 68) (f32.const   0.4))
-  (f32.store (i32.const 72) (f32.const   0.0)) ;; R
-  (f32.store (i32.const 76) (f32.const   0.32)) ;; G
-  (f32.store (i32.const 80) (f32.const   0.0)) ;; B
-
-  ;; sphere 3
-  (call $pos (i32.const 84) (f32.const 3.5) (f32.const 1.1) (f32.const 1.57) (f32.const 0))
-  (call $pos (i32.const 88) (f32.const -1.2) (f32.const 4.0) (f32.const 0) (f32.const 1.5))
-  (call $pos (i32.const 92) (f32.const 1.5) (f32.const -1.2) (f32.const 0) (f32.const -15))
-  (f32.store (i32.const 96) (f32.const   1.3))
-  (f32.store (i32.const 100) (f32.const   0.0)) ;; R
-  (f32.store (i32.const 104) (f32.const   0.0)) ;; G
-  (f32.store (i32.const 108) (f32.const   0.33)) ;; B
-)
+  (loop
+    (call $value (local.get $dst) (local.get $src))
+    (local.set $src (i32.add (local.get $src) (i32.const 16)))
+    (br_if 0
+      (i32.ne
+        (local.tee $dst (i32.add (local.get $dst) (i32.const 4)))
+        (i32.const 112)))))
 
 (func $ray_sphere (param $s i32) (result f32)
   (local $Lx f32)
