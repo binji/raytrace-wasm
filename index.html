@@ -80,7 +80,7 @@
 
     function updateUI() {
       let sphere = select.value | 0;
-      f32 = new Float32Array(mem.buffer, 112 + sphere * 16 * 7, 16 * 7);
+      f32 = new Float32Array(mem.buffer, 124 + sphere * 16 * 7, 16 * 7);
       for (let i = 0; i < els.length; ++i) {
         els[i].input.value = f32[i];
         els[i].span.textContent = f32[i].toFixed(2);
@@ -167,7 +167,7 @@
     }
 
     document.querySelector('button').addEventListener('click', event => {
-      let u8 = new Uint8Array(mem.buffer, 112, 16 * 7 * 3);
+      let u8 = new Uint8Array(mem.buffer, 124, 16 * 7 * 3);
 
       let hex = b => b.toString(16);
       let hex2 = b => `\\${hex(b >> 4)}${hex(b & 0xf)}`;
